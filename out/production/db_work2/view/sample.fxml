@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <children>
+      <AnchorPane prefHeight="511.0" prefWidth="691.0">
+         <children>
+            <TabPane layoutX="1.0" layoutY="1.0" prefHeight="511.0" prefWidth="691.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab>
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="clientTable" layoutX="14.0" layoutY="14.0" onMouseClicked="#clickItem" prefHeight="200.0" prefWidth="341.0">
+                                <columns>
+                                  <TableColumn fx:id="idClient" prefWidth="30.0" text="id" />
+                                  <TableColumn fx:id="orgname" prefWidth="105.0" text="Организация" />
+                                    <TableColumn fx:id="adress" prefWidth="96.0" text="Адрес" />
+                                    <TableColumn fx:id="director" prefWidth="109.0" text="Руководитель" />
+                                </columns>
+                              </TableView>
+                              <TableView fx:id="contractTable" layoutX="406.0" layoutY="14.0" prefHeight="200.0" prefWidth="271.0">
+                                 <columns>
+                                    <TableColumn fx:id="idContract" prefWidth="30.0" text="id" />
+                                    <TableColumn fx:id="date" prefWidth="144.0" text="Дата" />
+                                    <TableColumn fx:id="sum" prefWidth="96.0" text="Сумма" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="addClientBut" layoutX="14.0" layoutY="434.0" mnemonicParsing="false" onAction="#addClient" text="Добавить клиента" />
+                              <Button layoutX="14.0" layoutY="222.0" mnemonicParsing="false" onAction="#deleteClient" text="Удалить клиента" />
+                              <Button fx:id="addClientBut2" layoutX="139.0" layoutY="434.0" mnemonicParsing="false" onAction="#updateClient" text="Изменить данные клиента" />
+                              <TextField fx:id="nameSearch" layoutX="14.0" layoutY="281.0" onKeyReleased="#searchName" />
+                              <TextField fx:id="adressSearch" layoutX="14.0" layoutY="314.0" onKeyReleased="#searchAdress" />
+                              <TextField fx:id="directorSearch" layoutX="14.0" layoutY="348.0" onKeyReleased="#searchDirector" />
+                              <Label layoutX="171.0" layoutY="285.0" text="Поиск по организации" />
+                              <Label layoutX="171.0" layoutY="318.0" text="Поиск по адресу" />
+                              <Label layoutX="171.0" layoutY="352.0" text="Поиск по руководителю" />
+                              <Label layoutX="574.0" layoutY="285.0" text="Поиск по дате" />
+                              <Button fx:id="addClientBut21" layoutX="507.0" layoutY="434.0" mnemonicParsing="false" onAction="#updateContract" text="Изменить данные договора" />
+                              <Button fx:id="addClientBut22" layoutX="574.0" layoutY="400.0" mnemonicParsing="false" onAction="#addContract" text="Новый договор" />
+                              <Button layoutX="406.0" layoutY="222.0" mnemonicParsing="false" onAction="#deleteContract" text="Удалить договор" />
+                              <DatePicker fx:id="datePick" layoutX="399.0" layoutY="281.0" />
+                              <Button fx:id="addClientBut221" layoutX="469.0" layoutY="314.0" mnemonicParsing="false" onAction="#searchDate" text="Поиск" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </children>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+</GridPane>
